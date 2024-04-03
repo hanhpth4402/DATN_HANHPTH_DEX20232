@@ -5,12 +5,10 @@ import {useAccount, useConnect, useDisconnect} from "wagmi";
 import useModal from "@/src/hooks/useModal";
 
 const ButtonConnectWallet = () => {
-    const [showWalletSelector, setShowWalletSelector] = useState(false);
     const { address, connector, isConnected } = useAccount();
     const [connected, setConnected] = useState(false);
     const { disconnect } = useDisconnect();
     const [onPresentModalCallback] = useModal('connect', <ConnectorModal/>)
-    console.log(isConnected, `${address?.substring(0,5)}...${address?.substring(address?.length-5, address?.length)}`);
     useEffect(() => {
         setConnected(isConnected);
     }, [isConnected]);

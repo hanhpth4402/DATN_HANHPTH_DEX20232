@@ -20,7 +20,7 @@ const Trade = () => {
     }
 
     return (
-        <Container style={{ width: '700px', backgroundColor: '#2f323d', margin: 0, marginTop: '20px', padding: '12px', borderRadius: 'var(--bs-border-radius-xl)' }}>
+        <Container style={{ width: '700px', backgroundColor: '#2f323d', margin: 'auto', marginTop: '20px', padding: '12px', borderRadius: 'var(--bs-border-radius-xl)' }}>
             <SwapHeader
                 slippage={slippageTolerance}
                 selectTab={handleSelectTab}
