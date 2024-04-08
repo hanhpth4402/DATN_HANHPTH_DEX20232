@@ -1,4 +1,3 @@
-import useTimeStamp from "@/src/components/swap/useTimeStamp";
 import {Interface} from "@ethersproject/abi";
 import {abiRouteChiHang, abiRouterV2Uniswap} from "@/src/config/abi";
 import useBalance from "@/src/components/addLiquidity/useBalance";
@@ -12,7 +11,7 @@ const useSwapCallParameters = ({tokens, address, inputValue, chainId}: {tokens: 
         inputValue,
         chainId
     });
-    const timeStamp = useTimeStamp();
+    const timeStamp = `0x${(Number((Number(new Date())/1000).toFixed(0)) + 60*5).toString(16)}`;
 
     const INTERFACE = new Interface(abiRouteChiHang);
     const methodName = 'swapExactETHForTokens';

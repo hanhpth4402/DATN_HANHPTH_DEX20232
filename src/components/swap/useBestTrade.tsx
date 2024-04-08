@@ -3,7 +3,6 @@ import {abiPair, abiPairChiHang} from "@/src/config/abi";
 import {Trade} from "@/src/components/swap/components/footerSwapForm";
 import {useEffect, useMemo, useState} from "react";
 import BigNumber from "bignumber.js";
-import {tokenList} from "@/src/config/tokenList";
 import Token from "@/src/entities/token";
 import {useAccount} from "wagmi";
 
