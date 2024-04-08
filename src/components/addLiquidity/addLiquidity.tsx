@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import {useBalance} from "@/src/hooks/useBalanceToken";
 
-const AddLiquidity = () => {
+const AddLiquidity: React.FC<{}> = () => {
     const {address} = useAccount();
     const chainId = useChainId();
 
