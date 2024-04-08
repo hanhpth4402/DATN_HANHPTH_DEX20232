@@ -5,8 +5,13 @@ import LiquidityHeader from "@/src/components/addLiquidity/components/liquidityH
 import {useState} from "react";
 import liquidityTabs from "@/src/constants/liquidityTabs";
 import Remove from "@/src/components/liquidity/remove/Remove";
+import {useSelector} from "react-redux";
 
 const Liquidity = () => {
+    const {
+        slippageTolerance,
+    } = useSelector((state: {addLiquidity: any}) => state.addLiquidity);
+
     const [currentTab, setCurrentTab] = useState<string>(liquidityTabs[0].form);
     const handleSelectTab = (tabForm: string) => {
         const selectedTab = liquidityTabs.find((tab) => tab.form === tabForm);
@@ -23,6 +28,7 @@ const Liquidity = () => {
         >
             <Container className="w-100 p-0">
                 <LiquidityHeader
+                    slippage={slippageTolerance}
                     currentTab={currentTab}
                     selectTab={handleSelectTab}
                 />
